@@ -1,0 +1,9 @@
+_site
+.sass-cache
+.jekyll-metadata
+Gemfile.lock
+test.py
+helper.py
+Untitled.code-workspace
+.vscode
+ASC

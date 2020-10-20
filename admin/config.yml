@@ -1,0 +1,141 @@
+# config.yml
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "assets/images"
+publish_mode: editorial_workflow
+site_url: "http://erc.cuhk.edu.hk/"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts/"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "/{{slug}}"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "single" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "tagline", name: "tagline", widget: "string", required: false }
+      - { label: "excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "header"
+        name: "header"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - {
+              label: "overlay_image",
+              name: "overlay_image",
+              widget: "image",
+              allow_mulitple: false,
+              required: false,
+            }
+          - {
+              label: "overlay_filter",
+              name: "overlay_filter",
+              widget: "number",
+              required: false,
+              valueType: float,
+              min: 0,
+              max: 1,
+            }
+          - {
+              label: "caption",
+              name: "caption",
+              widget: "string",
+              required: false,
+            }
+          - label: "button"
+            name: "actions"
+            widget: "list"
+            required: false
+            fields:
+              - {
+                  label: "label",
+                  name: "label",
+                  widget: "string",
+                  allow_mulitple: false,
+                  required: false,
+                  default: "Read More",
+                }
+              - {
+                  label: "url",
+                  name: "url",
+                  widget: "string",
+                  required: false,
+                  default: "#",
+                }
+      - label: "gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        collapsed: true
+        fields:
+          - { label: "title", name: "title", widget: "string", required: false }
+          - {
+              label: "Image",
+              name: "image_path",
+              widget: "image",
+              required: false,
+            }
+          - {
+              label: "url",
+              name: "url",
+              widget: "string",
+              required: false,
+              default: "/assets/images/{filename}",
+            }
+          - { label: "alt", name: "alt", widget: "string", required: false }
+
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          default: ["others"],
+        }
+      - {
+          label: "categories",
+          name: "categories",
+          widget: "list",
+          required: false,
+          default: ["ASC"],
+        }
+      - {
+          label: "Table of content",
+          name: "toc",
+          widget: "boolean",
+          default: false,
+          required: false,
+        }
+      - {
+          label: "TOC title",
+          name: "toc_label",
+          widget: "string",
+          required: false,
+        }
+      - label: "sidebar"
+        name: "sidebar"
+        widget: "list"
+        required: false
+        allow_add: false
+        fields:
+          - {
+              label: "image",
+              name: "image",
+              widget: "image",
+              allow_mulitple: false,
+              required: false,
+            }
+          - {
+              label: "image_alt",
+              name: "image_alt",
+              widget: "string",
+              required: false,
+            }
+          - { label: "title", name: "title", widget: "string", required: false }
+          - { label: "text", name: "text", widget: "string", required: false }

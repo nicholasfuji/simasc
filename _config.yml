@@ -1,0 +1,177 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Economic Research Centre
+subtitle: The Chinese University of Hong Kong
+email: nicholasfucl@cuhk.edu.hk
+description: ERC, CUHK
+locale: "en-GB"
+baseurl:"simasc"
+# twitter_username: username
+minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+search: true
+repository: ""
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+logo: "/assets/images/CUHK_logo.png"
+include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-liquify
+
+author:
+  name: "Economic Research Centre"
+  location: "516-ELB, CUHK"
+  avatar: "/assets/images/CUHK_logo.png"
+  bio: "Part of HKIAPS, CUHK"
+  links:
+    - label: "Official website"
+      icon: "fas fa-fw fa-link"
+      url: "https://erc.cuhk.edu.hk"
+    - label: "EconRC@cuhk.edu.hk"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:EconRC@cuhk.edu.hk"
+    - label: "(852) 3943 6762"
+      icon: "fas fa-phone"
+      url: "tel:+85239436762"
+    # - label: "Facebook"
+    #   icon: "fab fa-fw fa-facebook"
+    #   url: "https://www.facebook.com/Economic-Research-Centre-500334206838357/"
+
+footer:
+  links:
+    - label: "ERC, HKIAPS, ELB, CUHK"
+      icon: "fas fa-map-marker-alt"
+      url: "https://goo.gl/maps/EWQ1o6ym7cKarpis8"
+    - label: "EconRC@cuhk.edu.hk"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:EconRC@cuhk.edu.hk"
+    - label: "(852) 3943 6762"
+      icon: "fas fa-phone"
+      url: "tel:+85239436762"
+    # - label: "Facebook"
+    #   icon: "fab fa-fw fa-facebook"
+    #   url: "https://www.facebook.com/Economic-Research-Centre-500334206838357/"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+  
+  # collections
+
+  # _programmes:
+  - scope:
+      path: "_programmes"
+      type: programmes
+    values:
+      layout: single
+      header:
+        overlay_image: /assets/images/index-rp.jpg
+        overlay_filter: 0.5
+      author_profile: true
+      toc: true
+      share: true
+      related: true
+  # _publications
+  - scope:
+      path: "_publications"
+      type: publications
+    values:
+      layout: single
+      header:
+        overlay_image: /assets/images/index-pub.jpg
+        overlay_filter: 0.5
+        # actions:
+        #   - label: '<i class="fas fa-download"></i> Download'
+        #     url: "#test"
+      author_profile: true
+      toc: true
+      share: true
+      related: true
+      excerpt: "Default excerpt"
+      sidebar:
+        - title: "Title"
+          image: http://placehold.it/350x250
+          image_alt: "image"
+          text: "Some text here."
+        - title: "Another Title"
+          text: "More text here."
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+collections:
+  programmes:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
