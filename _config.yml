@@ -18,7 +18,6 @@ subtitle: The Chinese University of Hong Kong
 email: nicholasfucl@cuhk.edu.hk
 description: ERC, CUHK
 locale: "en-GB"
-baseurl:"simasc"
 # twitter_username: username
 minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 search: true
